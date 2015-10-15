@@ -15,7 +15,7 @@ app.secret_key = 'CHANGE_ME'
 def index(template):
 	form = NameForm(request.form)
 	if request.method == 'POST' and form.validate():
-		session["name"] = form.name.data
+		session["name"] = dickbutt(form.name.data)
 	return render_template(template, form=form)
 
 #clears the session and then redirects back to index
@@ -24,6 +24,8 @@ def logout():
 	session["name"] = ""
 	return redirect(url_for('index'))
 
+def dickbutt(name):
+	return name + " is a balla"
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
