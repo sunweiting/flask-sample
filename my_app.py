@@ -24,8 +24,20 @@ def logout():
 	session["name"] = ""
 	return redirect(url_for('index'))
 
+def percentile(meas):
+    mw_HE1S = open("mw_HE1S.txt", "r")
+    list_mw_HE1S = []
+    for line in mw_HE1S:
+        remove_n = line.rstrip()
+        int_form = int(remove_n)
+        list_mw_HE1S.append(int_form)
+    list_mw_HE1S.insert(bisect_left(list_mw_HE1S, meas), meas)
+    indexx = list_mw_HE1S.index(meas)
+    stats = float(indexx/len(list_mw_HE1S))
+    return stats*100
+
 def name_alter(name):
-    return name + " testing change???"
+    return percentile(300) + " testing change???"
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
