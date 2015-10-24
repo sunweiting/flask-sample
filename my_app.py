@@ -25,7 +25,7 @@ def logout():
 	return redirect(url_for('index'))
 
 def percentile(meas):
-    mw_HE1S = open("mw_HE1S.txt", "r")
+    mw_HE1S = open("Data/mw_HE1S.txt", "r")
     list_mw_HE1S = []
     for line in mw_HE1S:
         remove_n = line.rstrip()
