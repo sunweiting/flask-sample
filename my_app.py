@@ -1,6 +1,7 @@
 from flask import Flask, render_template, session, redirect, request, url_for
 from flask.ext.mobility import Mobility
 from flask.ext.mobility.decorators import mobile_template
+from bisect import bisect_left
 
 from forms import NameForm
 
