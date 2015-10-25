@@ -35,7 +35,7 @@ def percentile(meas):
     list_mw_HE1S.insert(bisect_left(list_mw_HE1S, meas), meas)
     indexx = list_mw_HE1S.index(meas)
     list_length = len(list_mw_HE1S)
-    stats = float(index)/float(list_length)
+    stats = float(indexx)/float(list_length)
     return stats*100
 
 def name_alter(name):
