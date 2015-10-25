@@ -12,8 +12,9 @@ Welcome To Our Interactive Historic District Tool!
 {{session["name"]}}! <br>
 <a href="/logout">forget me</a>
 {% else %}
+Enter a max width measurement of a one story, Heights East home:
 <form action="" method="post" name="index">
-{{form.name(placeholder="Sample Name")}}
+{{form.name(placeholder="Integer Measurement")}}
 <input type="submit" value="Submit">
 </form>
 {% endif %}
