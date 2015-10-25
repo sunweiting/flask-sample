@@ -39,7 +39,7 @@ def percentile(meas):
     return stats*100
 
 def name_alter(name):
-    return str(percentile(int(name))) + " testing Richard changes!"
+    return str(percentile(int(name))) + " testing Jacob changes!"
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
