@@ -1,14 +1,15 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock %}
+{% block title %}{% endblock %}
 {% block head %}
 {{ super() }}
 
 {% endblock %}
 {% block content %}
-{% if session["name"] %}
 <h1>
-Hi, {{session["name"]}}! <br>
+Welcome To Our Interactive Historic District Tool!
 </h1>
+{% if session["name"] %}
+{{session["name"]}}! <br>
 <a href="/logout">forget me</a>
 {% else %}
 <form action="" method="post" name="index">

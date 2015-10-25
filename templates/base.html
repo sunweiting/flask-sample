@@ -2,15 +2,25 @@
 <html lang="en">
     <head>
         {% block head %}
-        <title>{% block title %}{% endblock %} - Flask Sample Site</title>
-   
+        <title>{% block title %}{% endblock %} IHDT</title>
+   	<link href='http://fonts.googleapis.com/css?family=Ubuntu|Roboto|Rock+Salt|Orbitron' rel='stylesheet' type='text/css'>
 
-        {% endblock %}
+       
+    <style>
+    #content {
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	border-style: solid;
+	border-width: 40px;
+	border-radius: 10px;
+    }
+    </style>
+
+ 	{% endblock %}
     </head>
 
 
     <body>
-        Flask Sample Site!
         <div id="content" class="container-fluid">
             {% block content %}{% endblock %}
         </div>
