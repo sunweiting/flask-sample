@@ -42,8 +42,30 @@ def percentile(meas):
     stats = float(indexx)/float(len(list_mw_HE1S))
     return stats*100
 
+def isfloat(x):
+    try:
+        a = float(x)
+    except ValueError:
+        return False
+    else:
+        return True
+
+def isint(x):
+    try:
+        a = float(x)
+        b = int(a)
+    except ValueError:
+        return False
+    else:
+        return a == b
+
 def name_alter(name):
-    return "You are in the " + str(percentile(round(name))) + " percentile!"
+    if isfloat(name):
+        return "You are in the " + str(percentile(round(name))) + " percentile!"
+    if isint(name):
+        return "You are in the " + str(percentile(int(name))) + " percentile!"
+    if isinstance(name, str):
+	return "Please enter a numerical value within the graph above!"  
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
