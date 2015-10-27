@@ -27,8 +27,8 @@ def logout():
 	return redirect(url_for('index'))
 
 @app.route('/tool')
-def tool(template):
-	return ""
+def tool():
+	return "Hello World"
 
 def percentile(meas):
     mw_HE1S = open("Data/mw_HE1S.txt", "r")
