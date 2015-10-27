@@ -65,7 +65,7 @@ def name_alter(name):
         return "You are in the " + str(percentile(round(float(name)))) + " percentile!"
     if isint(name):
         return "You are in the " + str(percentile(int(name))) + " percentile!"
-    if isinstance(name, str):
+    if isinstance(name, basestring):
 	return "Please enter a numerical value within the graph above!"  
 
 if __name__ == "__main__":
