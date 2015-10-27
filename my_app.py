@@ -4,6 +4,7 @@ from flask.ext.mobility.decorators import mobile_template
 from bisect import bisect_left
 
 from forms import NameForm
+from math import floor
 
 app = Flask(__name__)
 Mobility(app)
