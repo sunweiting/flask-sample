@@ -30,10 +30,7 @@ def tool():
 	return "Hello World"
 
 def percentile(meas):
-    if isinstance(meas, float):
-        new_meas = round(meas)
-    else:
-        new_meas = meas
+    new_meas = meas
     mw_HE1S = open("Data/mw_HE1S.txt", "r")
     list_mw_HE1S = []
     for line in mw_HE1S:
@@ -46,7 +43,7 @@ def percentile(meas):
     return stats*100
 
 def name_alter(name):
-    return "You are in the " + str(percentile(int(name))) + " percentile!"
+    return "You are in the " + str(percentile(round(name))) + " percentile!"
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
