@@ -60,7 +60,7 @@ def isint(x):
 
 def name_alter(name):
     print (name)
-    if isfloat(name):
+    if isfloat(name) and ((float(name)/floor(name))!=1):
         return "You are in the " + str(percentile(round(name))) + " percentile!"
     if isint(name):
         return "You are in the " + str(percentile(int(name))) + " percentile!"
