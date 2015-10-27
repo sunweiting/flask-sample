@@ -30,16 +30,19 @@ def tool():
 	return "Hello World"
 
 def percentile(meas):
-    mw_HE1S = open("Data/mw_HE1S.txt", "r")
+    if isinstance(meas, float):
+        new_meas = round(meas)
+    else:
+        new_meas = meas
+    mw_HE1S = open("mw_HE1S.txt", "r")
     list_mw_HE1S = []
     for line in mw_HE1S:
         remove_n = line.rstrip()
         int_form = int(remove_n)
         list_mw_HE1S.append(int_form)
-    list_mw_HE1S.insert(bisect_left(list_mw_HE1S, meas), meas)
-    indexx = list_mw_HE1S.index(meas)
-    list_length = len(list_mw_HE1S)
-    stats = float(indexx)/float(list_length)
+    list_mw_HE1S.insert(bisect_left(list_mw_HE1S, new_meas), new_meas)
+    indexx = list_mw_HE1S.index(new_meas)
+    stats = float(indexx)/float(len(list_mw_HE1S))
     return stats*100
 
 def name_alter(name):
