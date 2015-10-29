@@ -26,7 +26,7 @@ def logout():
 	return redirect(url_for('index'))
 
 @app.route('/tool', methods=['GET','POST'])
-def tool(template):
+def tool():
 	form = NameForm(request.form)
 	if request.method == 'POST' and form.validate():
 		session["name"] = name_alter(form.name.data)
