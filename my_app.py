@@ -13,7 +13,7 @@ app.secret_key = 'CHANGE_ME'
 
 ### ROUTING ###
 @app.route('/', methods=['GET','POST'])
-def index(template):
+def index():
 	form = NameForm(request.form)
 	if request.method == 'POST' and form.validate():
 		session["name"] = name_alter(form.name.data)
