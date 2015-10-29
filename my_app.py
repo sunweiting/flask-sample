@@ -13,12 +13,11 @@ app.secret_key = 'CHANGE_ME'
 
 ### ROUTING ###
 @app.route('/', methods=['GET','POST'])
-@mobile_template('{mobile/}index.html')
 def index(template):
 	form = NameForm(request.form)
 	if request.method == 'POST' and form.validate():
 		session["name"] = name_alter(form.name.data)
-	return render_template(template, form=form)
+	return render_template('index.html', form=form)
 
 #clears the session and then redirects back to index
 @app.route('/logout')
@@ -27,11 +26,11 @@ def logout():
 	return redirect(url_for('index'))
 
 @app.route('/tool', methods=['GET','POST'])
-def index(template):
+def tool(template):
 	form = NameForm(request.form)
 	if request.method == 'POST' and form.validate():
 		session["name"] = name_alter(form.name.data)
-	return render_template(template, form=form)
+	return render_template('tool.html', form=form)
 
 def percentile(meas):
     mw_HE1S = open("Data/mw_HE1S.txt", "r")
