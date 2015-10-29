@@ -1,35 +1,56 @@
-{% extends "base.html" %}
-{% block title %}{% endblock %}
-{% block head %}
-{{ super() }}
-<style>
-img{
-	width:600px;
-	height:380px;
-	border-style: solid;
-	border-width: 4px;
-}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Interactive Historic District Tool</title>	
 
-{% endblock %}
-{% block content %}
-<h1>
-Welcome To Our Interactive Historic District Tool!
-</h1>
-<img src="/static/images/mw_HE1S.jpg" alt="Error Cannot Load">
-<br>
-<br>
-{% if session["name"] %}
-{{session["name"]}}! <br>
-<a href="/logout"><br>Try Again<br></a>
-{% else %}
-Enter a max width measurement of a one story, Heights East home:
-<form action="" method="post" name="index">
-{{form.name(placeholder="Integer Measurement")}}
-<input type="submit" value="Submit">
-</form>
-{% endif %}
-<br>
-<a href = "/tool"> Sample Link </a>
+    <link     href='http://fonts.googleapis.com/css?family=Sintony:400,700'     rel='stylesheet' type='text/css'>
 
-{% endblock %}
+    <style type="text/css">    
+      body
+      {
+        background-color:#000;
+      }
+
+      h1
+      {
+        font-size:48px;
+        margin-top:0;
+        font-family:Arial, sans-serif;
+        text-shadow:2px 0 15px #292929;
+        letter-spacing:4px;
+        text-decoration:none;
+        color:#DDD;
+      }
+
+      #banner
+      {
+        width:500px;
+        height:200px;
+        text-align:center;
+        background-image:url(http://i.imgur.com/MQHYB.jpg);
+        background-repeat:no-repeat;
+        border-radius:5px;
+        margin:90px auto auto;
+        padding:80px 0;
+      }
+
+      .lead
+      {
+        background-color:rgba(255,255,255,0.6);
+        border-radius:3px;
+        box-shadow:rgba(0,0,0,0.2) 0 1px 3px;
+        font-family:Sintony, sans-serif;
+      }
+    </style>
+
+  </head>  
+
+  <body>
+    <div id="banner">
+      <h1>Interactive Tool</h1>
+      <p class="lead">Check Your Proposed Modification Here</p>
+    </div>
+    <a href="/tool"><br>The Tool<br></a>
+  </body>
+</html>
