@@ -27,7 +27,6 @@ def logout():
 	return redirect(url_for('index'))
 
 @app.route('/tool', methods=['GET','POST'])
-@mobile_template('{mobile/}tool.html')
 def index(template):
 	form = NameForm(request.form)
 	if request.method == 'POST' and form.validate():
