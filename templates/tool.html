@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+{% block head %}
+{{ super() }}
+<style>
+img{
+	width:600px;
+	height:380px;
+	border-style: solid;
+	border-width: 4px;
+}
+</style>
+
+{% endblock %}
+{% block content %}
+<h1>
+Welcome To Our Interactive Historic District Tool!
+</h1>
+<img src="/static/images/mw_HE1S.jpg" alt="Error Cannot Load">
+<br>
+<br>
+{% if session["name"] %}
+{{session["name"]}}! <br>
+<a href="/logout"><br>Try Again<br></a>
+{% else %}
+Enter a max width measurement of a one story, Heights East home:
+<form action="" method="post" name="index">
+{{form.name(placeholder="Integer Measurement")}}
+<input type="submit" value="Submit">
+</form>
+{% endif %}
+<br>
+<a href = "/"> Home </a>
+
+{% endblock %}

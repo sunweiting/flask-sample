@@ -26,9 +26,13 @@ def logout():
 	session["name"] = ""
 	return redirect(url_for('index'))
 
-@app.route('/tool')
-def tool():
-	return "Hello World"
+@app.route('/tool', methods=['GET','POST'])
+@mobile_template('{mobile/}tool.html')
+def index(template):
+	form = NameForm(request.form)
+	if request.method == 'POST' and form.validate():
+		session["name"] = name_alter(form.name.data)
+	return render_template(template, form=form)
 
 def percentile(meas):
     mw_HE1S = open("Data/mw_HE1S.txt", "r")
