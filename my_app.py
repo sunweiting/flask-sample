@@ -37,7 +37,7 @@ def rbeca():
 	return render_template('rbeca.html')
 
 @app.route('/help')
-def rbeca():
+def help():
 	return render_template('help.html')
 
 def percentile(meas):
