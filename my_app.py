@@ -23,7 +23,7 @@ def index():
 @app.route('/logout')
 def logout():
 	session["name"] = ""
-	return redirect(url_for('index'))
+	return redirect(url_for('tool'))
 
 @app.route('/tool', methods=['GET','POST'])
 def tool():
@@ -31,6 +31,14 @@ def tool():
 	if request.method == 'POST' and form.validate():
 		session["name"] = name_alter(form.name.data)
 	return render_template('tool.html', form=form)
+
+@app.route('/rbeca', methods=['GET','POST'])
+def rbeca():
+	return render_template('rbeca.html')
+
+@app.route('/help', methods=['GET','POST'])
+def rbeca():
+	return render_template('help.html')
 
 def percentile(meas):
     mw_HE1S = open("Data/mw_HE1S.txt", "r")
