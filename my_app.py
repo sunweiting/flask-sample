@@ -32,11 +32,11 @@ def tool():
 		session["name"] = name_alter(form.name.data)
 	return render_template('tool.html', form=form)
 
-@app.route('/rbeca', methods=['GET','POST'])
+@app.route('/rbeca')
 def rbeca():
 	return render_template('rbeca.html')
 
-@app.route('/help', methods=['GET','POST'])
+@app.route('/help')
 def rbeca():
 	return render_template('help.html')
 
