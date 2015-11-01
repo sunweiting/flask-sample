@@ -1,23 +1,29 @@
-{% extends "base.html" %}
-{% block title %}IHDT-Help{% endblock %}
-{% block head %}
-{{ super() }}
-<style>
-</style>
-
-{% endblock %}
-{% block content %}
-<h1 style="text-align:center">
-RBECA Page
-</h1>
+<!DOCTYPE html>
+<html>
+<title>
+Drop Down Menu
+</title>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!--not sure what the above links/src is but it is needed for the drop down to function-->
+</head>
 <body>
-This is the RBECA page yay.
-</body>
-<br>
-<li>
-<a href = "/"> Home</a>
-<a href = "/rbeca">RBECA</a>
-<a href = "/tool">The Tool</a>
-<a href = "/help">Help</a>
-</li>
-{% endblock %}
+<div class="container">
+  <h2>Welcome to the Interactive Tool for Historic Districts!</h2>
+  <h3>Please Select your District</h3>                                          
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">District
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Heights East</a></li>
+      <li><a href="#">Heights West</a></li>
+    </ul>
+  </div>
+</div>
+<p>Use the .dropdown-menu class to actually build the dropdown menu.</p>
+<p>To open the dropdown menu, use a button or a link with a class of .dropdown-toggle and data-toggle="dropdown".</p>
+<body>
+</html>
