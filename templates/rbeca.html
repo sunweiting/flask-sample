@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}RBECA - {% endblock %}
+{% block head %}
+{{ super() }}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!--not sure what the above links/src is but it is needed for the drop down to function-->
+{% endblock %}
+
+{% block content %}
+<h1>
+Modified RBECA
+</h1>
+<div class="container">
+  <h3>Please Select your District</h3>                                          
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">District
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Heights East</a></li>
+      <li><a href="#">Heights West</a></li>
+    </ul>
+  </div>
+</div>
+<br>
+{% endblock %}

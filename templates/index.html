@@ -1,19 +1,15 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock %}
+{% block title %}Index - {% endblock %}
 {% block head %}
 {{ super() }}
+<style>
+
+</style>
 
 {% endblock %}
 {% block content %}
-{% if session["name"] %}
 <h1>
-Hi, {{session["name"]}}! <br>
+Home Page (will be pretty soon...)
 </h1>
-<a href="/logout">forget me</a>
-{% else %}
-<form action="" method="post" name="index">
-{{form.name(placeholder="Sample Name")}}
-<input type="submit" value="Submit">
-</form>
-{% endif %}
+<br>
 {% endblock %}
